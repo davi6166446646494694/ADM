@@ -1,111 +1,108 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Sistema Completo</title>
-
-<style>
-body {
-  background:#0f0f0f;
-  color:#fff;
-  font-family:Arial;
-}
-.container {
-  width:400px;
-  margin:50px auto;
-  background:#1c1c1c;
-  padding:20px;
-  border-radius:10px;
-}
-input, textarea, button {
-  width:100%;
-  margin-top:10px;
-  padding:10px;
-  border:none;
-  border-radius:5px;
-}
-button {
-  background:#00ff88;
-  font-weight:bold;
-  cursor:pointer;
-}
-.hidden { display:none; }
-h2 { text-align:center; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasta de Amor ❤️ Pra Minha Vida</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #ffebee, #ffcdd2);
+      color: #333;
+      margin: 0;
+      padding: 15px;
+      text-align: center;
+    }
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #d81b60;
+      font-size: 2.8em;
+      margin: 25px 0 15px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    .texto {
+      font-size: 1.35em;
+      line-height: 1.8;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 35px;
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      margin: 30px 0;
+      border: 3px solid #f06292;
+    }
+    .fotos {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+    .fotos img {
+      max-width: 48%;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+      border: 7px solid #ff80ab;
+      transition: all 0.3s ease;
+    }
+    .fotos img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    @media (max-width: 768px) {
+      .fotos {
+        flex-direction: column;
+        align-items: center;
+      }
+      .fotos img {
+        max-width: 90%;
+        margin-bottom: 25px;
+      }
+    }
+    .footer {
+      font-size: 1.2em;
+      color: #c2185b;
+      margin-top: 50px;
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- 🔐 LOGIN -->
-<div class="container" id="login">
-  <h2>Login / Cadastro</h2>
-  <input id="gmail" placeholder="GMAIL">
-  <input id="senha" type="password" placeholder="CRIAR UMA SENHA">
-  <button onclick="entrar()">ENTRAR</button>
-</div>
+  <div class="container">
+    <h1>Minha Pasta de Amor pra Você ❤️</h1>
 
-<!-- 📋 SISTEMA -->
-<div class="container hidden" id="sistema">
-  <h2>Inserir dados da conta</h2>
+    <div class="texto">
+      Meu amor…<br><br>
+      Eu te amo muito. Muito mesmo.<br>
+      Você é minha vida inteira, sabe? Tipo, antes de você eu só existia, agora eu vivo de verdade.<br>
+      Você é meu tudo: meu sorriso mais fácil, meu motivo pra acordar feliz, minha paz nos dias ruins, minha loucura nos dias bons.<br><br>
 
-  <input id="nome" placeholder="NOME DA CONTA">
-  <input id="rebite" placeholder="REBITE ATUALMENTE">
-  <input id="valor" placeholder="VALOR DO PAGAMENTO">
-  <input id="numero" placeholder="NÚMERO">
+      Você é minha. Só minha. E eu sou completamente seu, de corpo, alma, coração e tudo que eu sou.<br>
+      Não tem mais volta, não quero mais volta. Quero você pra sempre, nos detalhes pequenos e nas promessas grandes.<br><br>
 
-  <button onclick="confirmar()">CONFIRMAR</button>
-</div>
+      Te amo tanto que às vezes nem sei onde termina eu e começa você.<br>
+      Você é meu lar, meu vício, meu sonho que virou realidade.<br><br>
 
-<!-- 📌 ÁREA SECUNDÁRIA -->
-<div class="container hidden" id="secundaria">
-  <h2>Área Secundária</h2>
+      Não me larga nunca, tá? Porque sem você eu não sou nada.<br>
+      Te amo, caralho. Te amo pra caralho. ❤️
+    </div>
 
-  <p><b>Nome:</b> <span id="v_nome"></span></p>
-  <p><b>Rebite:</b> <span id="v_rebite"></span></p>
-  <p><b>Valor:</b> <span id="v_valor"></span></p>
-  <p><b>Número:</b> <span id="v_numero"></span></p>
+    <div class="fotos">
+      <img src="https://files.catbox.moe/8zq1k1.jpg" alt="Você linda de tranças molhadas">
+      <img src="https://files.catbox.moe/2f3p4v.jpg" alt="Você fofo com orelhinhas de cachorro">
+    </div>
 
-  <h3>Bloco de Nota</h3>
-  <textarea id="nota"></textarea>
+    <div class="footer">
+      Feita só pra você, minha safadinha 😏❤️<br>
+      Abre no navegador e mostra pra ela!
+    </div>
+  </div>
 
-  <button onclick="finalizar()">FINALIZAR CONTA</button>
-</div>
-
-<script>
-// 🔐 LOGIN
-function entrar() {
-  const gmail = document.getElementById("gmail").value;
-  const senha = document.getElementById("senha").value;
-
-  if(!gmail || !senha){
-    alert("Preencha todos os campos");
-    return;
-  }
-
-  localStorage.setItem("gmail", gmail);
-  localStorage.setItem("senha", senha);
-
-  document.getElementById("login").classList.add("hidden");
-  document.getElementById("sistema").classList.remove("hidden");
-}
-
-// 📋 CONFIRMAR CONTA
-function confirmar() {
-  const nome = document.getElementById("nome").value;
-  const rebite = document.getElementById("rebite").value;
-  const valor = document.getElementById("valor").value;
-  const numero = document.getElementById("numero").value;
-
-  if(!nome || !rebite || !valor || !numero){
-    alert("Preencha tudo");
-    return;
-  }
-
-  localStorage.setItem("nome", nome);
-  localStorage.setItem("rebite", rebite);
-  localStorage.setItem("valor", valor);
-  localStorage.setItem("numero", numero);
-
+</body>
+</html>
   document.getElementById("v_nome").innerText = nome;
   document.getElementById("v_rebite").innerText = rebite;
   document.getElementById("v_valor").innerText = valor;
