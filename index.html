@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1 Mês de Nós ❤️</title>
+    <title>ESSE TEXTO É PRA VC ESTEFANY ❤️</title>
     <style>
         body {
             margin: 0;
@@ -29,16 +29,10 @@
             animation: fadeIn 2s ease-in-out;
         }
         h1 {
-            font-size: 3em;
+            font-size: 2.6em;
             color: #e74c3c;
-            margin: 0 0 40px 0;
+            margin: 0 0 45px 0;
             text-shadow: 2px 2px 12px rgba(231, 76, 60, 0.4);
-        }
-        .date {
-            font-size: 1.7em;
-            color: #c0392b;
-            margin-bottom: 50px;
-            font-weight: bold;
         }
         .text-block {
             font-size: 1.38em;
@@ -82,30 +76,47 @@
 <body>
 
     <div class="container">
-        <div class="date">Dia 27 de [mês]/2025</div>
+        <h1>ESSE TEXTO É PRA VC ESTEFANY ❤️</h1>
         
-        <h1>O começo de nós... <span class="heart">❤️</span></h1>
+        <p class="text-block">No primeiro dia que a gente começou a conversar,</p>
+        <p class="text-block">eu senti algo diferente. Eu percebi algo muito em comum em você,</p>
+        <p class="text-block">eu nunca tinha visto isso em nenhuma garota que eu conheci.</p>
         
-        <p class="text-block">No dia 27 não era só amigos.</p>
-        <p class="text-block">Já tinha algo diferente no ar, um olhar que durava mais, um sorriso que dizia mais do que palavras.</p>
-        <p class="text-block">A gente sentia, mas ainda não falava.</p>
+        <p class="text-block" style="margin-top: 35px;">Então, desde o primeiro dia que nós começamos a conversar,</p>
+        <p class="text-block">eu senti algo diferente.</p>
+        <p class="text-block">E ali eu percebi que eu gostava de você.</p>
         
-        <p class="text-block" style="margin-top: 35px;">E aí veio o <span class="highlight">dia 1</span>...</p>
-        <p class="text-block">O dia em que a gente parou de fingir que era só amizade.</p>
-        <p class="text-block">Viramos um casal incrível, daqueles que se completam de um jeito que nem a gente esperava.</p>
+        <p class="text-block">Você me entendia, você me escutava,</p>
+        <p class="text-block">você sempre estava comigo, sempre mandava mensagem pra mim,</p>
+        <p class="text-block">até nos momentos mais difíceis.</p>
         
-        <p class="text-block" style="margin-top: 35px;">E hoje... já faz <span class="highlight">1 mês</span> juntos.</p>
-        <p class="text-block">1 mês de risadas, de mensagens a qualquer hora, de abraços que parecem durar pra sempre,</p>
-        <p class="text-block">de saudade quando um não tá perto, de planos bobos pro futuro e de uma certeza gigante:</p>
-        <p class="text-block">você é o melhor que já me aconteceu.</p>
+        <p class="text-block" style="margin-top: 35px;">E aí eu percebi que você era a pessoa certa.</p>
         
         <p class="text-block" style="margin-top: 40px; font-size: 1.45em; font-style: italic;">
-            Obrigado por escolher ficar, por me fazer sorrir todo dia,<br>
-            por ser minha pessoa favorita no mundo inteiro. <span class="heart">💕</span>
+            Eu te amo demais, você é incrível, muito especial pra mim.<br>
+            Meu primeiro pensamento do dia é você.<br>
+            Você é uma garota incrível.<br>
+            Nunca amei uma pessoa igual você. <span class="heart">💕</span>
         </p>
-        
-        <p class="text-block" style="margin-top: 50px; color: #e74c3c; font-weight: bold; font-size: 1.6em;">
-            1 mês de nós... e mal posso esperar pelos próximos. ❤️
+    </div>
+
+    <script>
+        // Corações flutuantes
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = ['❤️','💖','💗','💓','💞'][Math.floor(Math.random()*5)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 8 + 12) + 's';
+            heart.style.fontSize = (Math.random() * 1.5 + 2) + 'em';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 25000);
+        }
+        setInterval(createHeart, 700);
+    </script>
+
+</body>
+</html>            1 mês de nós... e mal posso esperar pelos próximos. ❤️
         </p>
     </div>
 
