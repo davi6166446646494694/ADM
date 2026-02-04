@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desde o Dia 27 ❤️</title>
+    <title>1 Mês de Nós ❤️</title>
     <style>
         body {
             margin: 0;
@@ -20,7 +20,7 @@
         }
         .container {
             max-width: 720px;
-            padding: 50px 30px;
+            padding: 60px 30px;
             background: rgba(255, 255, 255, 0.94);
             border-radius: 30px;
             box-shadow: 0 20px 60px rgba(231, 76, 60, 0.25);
@@ -29,21 +29,21 @@
             animation: fadeIn 2s ease-in-out;
         }
         h1 {
-            font-size: 2.8em;
+            font-size: 3em;
             color: #e74c3c;
-            margin: 0 0 35px 0;
+            margin: 0 0 40px 0;
             text-shadow: 2px 2px 12px rgba(231, 76, 60, 0.4);
         }
         .date {
-            font-size: 1.6em;
+            font-size: 1.7em;
             color: #c0392b;
-            margin-bottom: 45px;
+            margin-bottom: 50px;
             font-weight: bold;
         }
         .text-block {
-            font-size: 1.35em;
-            line-height: 1.7;
-            margin: 12px 0;
+            font-size: 1.38em;
+            line-height: 1.75;
+            margin: 14px 0;
             color: #34495e;
         }
         .highlight {
@@ -52,7 +52,7 @@
         }
         .heart {
             color: #e74c3c;
-            font-size: 2em;
+            font-size: 2.2em;
             animation: beat 1.8s infinite;
         }
         @keyframes fadeIn {
@@ -63,7 +63,7 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.3); }
         }
-        /* Corações flutuantes suaves */
+        /* Corações flutuantes */
         .floating-heart {
             position: absolute;
             font-size: 2.5em;
@@ -84,28 +84,48 @@
     <div class="container">
         <div class="date">Dia 27 de [mês]/2025</div>
         
-        <h1>O dia em que tudo mudou... <span class="heart">❤️</span></h1>
+        <h1>O começo de nós... <span class="heart">❤️</span></h1>
         
-        <p class="text-block">Conheci uma pessoa... e não foi só mais alguém passando pela minha vida.</p>
-        <p class="text-block">Foi como se o <span class="highlight">mundo parasse</span> por um segundo, só pra me mostrar que ali, naquele instante, algo <span class="highlight">muito especial</span> estava começando.</p>
+        <p class="text-block">No dia 27 não era só amigos.</p>
+        <p class="text-block">Já tinha algo diferente no ar, um olhar que durava mais, um sorriso que dizia mais do que palavras.</p>
+        <p class="text-block">A gente sentia, mas ainda não falava.</p>
         
-        <p class="text-block">Seu sorriso me pegou de surpresa, seu jeito de falar me fez querer ouvir mais e mais,</p>
-        <p class="text-block">e seu olhar... ah, seu olhar me fez sentir que eu já te conhecia de outras vidas.</p>
+        <p class="text-block" style="margin-top: 35px;">E aí veio o <span class="highlight">dia 1</span>...</p>
+        <p class="text-block">O dia em que a gente parou de fingir que era só amizade.</p>
+        <p class="text-block">Viramos um casal incrível, daqueles que se completam de um jeito que nem a gente esperava.</p>
         
-        <p class="text-block">Não precisei de muito tempo pra entender: <span class="highlight">você é diferente</span>. Você é especial.</p>
-        
-        <p class="text-block">Desde aquele dia, meus dias ganharam cor, minhas noites ganharam sonhos melhores,</p>
-        <p class="text-block">e meu coração ganhou um lugar que <span class="highlight">só você</span> ocupa.</p>
-        
-        <p class="text-block">Eu não imaginava que uma simples conversa, um encontro casual,</p>
-        <p class="text-block">pudesse virar isso tudo: saudade quando não te vejo,</p>
-        <p class="text-block">sorriso bobo só de lembrar de você, e uma certeza enorme de que</p>
-        <p class="text-block">quero você por perto... <span class="highlight">sempre</span>.</p>
-        
-        <p class="text-block">Você chegou mansinho, mas bagunçou tudo de um jeito lindo.</p>
-        <p class="text-block">E eu agradeço todos os dias por isso.</p>
+        <p class="text-block" style="margin-top: 35px;">E hoje... já faz <span class="highlight">1 mês</span> juntos.</p>
+        <p class="text-block">1 mês de risadas, de mensagens a qualquer hora, de abraços que parecem durar pra sempre,</p>
+        <p class="text-block">de saudade quando um não tá perto, de planos bobos pro futuro e de uma certeza gigante:</p>
+        <p class="text-block">você é o melhor que já me aconteceu.</p>
         
         <p class="text-block" style="margin-top: 40px; font-size: 1.45em; font-style: italic;">
+            Obrigado por escolher ficar, por me fazer sorrir todo dia,<br>
+            por ser minha pessoa favorita no mundo inteiro. <span class="heart">💕</span>
+        </p>
+        
+        <p class="text-block" style="margin-top: 50px; color: #e74c3c; font-weight: bold; font-size: 1.6em;">
+            1 mês de nós... e mal posso esperar pelos próximos. ❤️
+        </p>
+    </div>
+
+    <script>
+        // Corações flutuantes
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = ['❤️','💖','💗','💓','💞'][Math.floor(Math.random()*5)];
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 8 + 12) + 's';
+            heart.style.fontSize = (Math.random() * 1.5 + 2) + 'em';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 25000);
+        }
+        setInterval(createHeart, 700);
+    </script>
+
+</body>
+</html>        <p class="text-block" style="margin-top: 40px; font-size: 1.45em; font-style: italic;">
             Obrigado por existir, por ter cruzado meu caminho,<br>
             por ser exatamente quem você é. <span class="heart">💕</span>
         </p>
