@@ -16,33 +16,34 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         .container {
-            max-width: 720px;
-            padding: 60px 30px;
+            max-width: 90%;
+            width: 100%;
+            padding: 80px 20px;
             background: rgba(255, 255, 255, 0.94);
             border-radius: 30px;
             box-shadow: 0 20px 60px rgba(231, 76, 60, 0.25);
-            text-align: center;
+            text-align: left;
             backdrop-filter: blur(12px);
             animation: fadeIn 2s ease-in-out;
+            margin: 40px 15px;
         }
         h1 {
-            font-size: 2.6em;
+            font-size: 2.8em;
             color: #e74c3c;
-            margin: 0 0 45px 0;
+            text-align: center;
+            margin: 0 0 60px 0;
             text-shadow: 2px 2px 12px rgba(231, 76, 60, 0.4);
         }
-        .text-block {
-            font-size: 1.38em;
-            line-height: 1.75;
-            margin: 14px 0;
+        .text-line {
+            font-size: 1.45em;
+            line-height: 2.2;
+            margin: 18px 0;
             color: #34495e;
-        }
-        .highlight {
-            color: #e74c3c;
-            font-weight: bold;
+            white-space: pre-wrap; /* Mantém quebras só onde tem enter */
+            word-wrap: break-word;
         }
         .heart {
             color: #e74c3c;
@@ -56,6 +57,33 @@
         @keyframes beat {
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.3); }
+        }
+        /* Botão scroll to top */
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 2em;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            z-index: 999;
+        }
+        #scrollTopBtn.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        #scrollTopBtn:hover {
+            background: #c0392b;
+            transform: scale(1.15);
         }
         /* Corações flutuantes */
         .floating-heart {
@@ -78,27 +106,20 @@
     <div class="container">
         <h1>ESSE TEXTO É PRA VC ESTEFANY ❤️</h1>
         
-        <p class="text-block">No primeiro dia que a gente começou a conversar,</p>
-        <p class="text-block">eu senti algo diferente. Eu percebi algo muito em comum em você,</p>
-        <p class="text-block">eu nunca tinha visto isso em nenhuma garota que eu conheci.</p>
-        
-        <p class="text-block" style="margin-top: 35px;">Então, desde o primeiro dia que nós começamos a conversar,</p>
-        <p class="text-block">eu senti algo diferente.</p>
-        <p class="text-block">E ali eu percebi que eu gostava de você.</p>
-        
-        <p class="text-block">Você me entendia, você me escutava,</p>
-        <p class="text-block">você sempre estava comigo, sempre mandava mensagem pra mim,</p>
-        <p class="text-block">até nos momentos mais difíceis.</p>
-        
-        <p class="text-block" style="margin-top: 35px;">E aí eu percebi que você era a pessoa certa.</p>
-        
-        <p class="text-block" style="margin-top: 40px; font-size: 1.45em; font-style: italic;">
-            Eu te amo demais, você é incrível, muito especial pra mim.<br>
-            Meu primeiro pensamento do dia é você.<br>
-            Você é uma garota incrível.<br>
-            Nunca amei uma pessoa igual você. <span class="heart">💕</span>
-        </p>
+        <p class="text-line">No primeiro dia que a gente começou a conversar eu senti algo diferente...</p>
+        <p class="text-line">Eu percebi algo muito em comum em você, eu nunca tinha visto isso em nenhuma garota que eu conheci.</p>
+        <p class="text-line">Então desde o primeiro dia que nós começamos a conversar eu senti algo diferente.</p>
+        <p class="text-line">E ali eu percebi que eu gostava de você.</p>
+        <p class="text-line">Você me entendia, você me escutava, você sempre estava comigo...</p>
+        <p class="text-line">Sempre mandava mensagem pra mim até nos momentos mais difíceis.</p>
+        <p class="text-line">E aí eu percebi que você era a pessoa certa.</p>
+        <p class="text-line" style="margin-top: 50px; font-size: 1.55em; font-style: italic;">Eu te amo demais, você é incrível, muito especial pra mim.</p>
+        <p class="text-line">Meu primeiro pensamento do dia é você.</p>
+        <p class="text-line">Você é uma garota incrível.</p>
+        <p class="text-line">Nunca amei uma pessoa igual você. <span class="heart">💕</span></p>
     </div>
+
+    <button id="scrollTopBtn" onclick="scrollToTop()">↑</button>
 
     <script>
         // Corações flutuantes
@@ -113,52 +134,19 @@
             setTimeout(() => heart.remove(), 25000);
         }
         setInterval(createHeart, 700);
-    </script>
 
-</body>
-</html>            1 mês de nós... e mal posso esperar pelos próximos. ❤️
-        </p>
-    </div>
-
-    <script>
-        // Corações flutuantes
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('floating-heart');
-            heart.innerHTML = ['❤️','💖','💗','💓','💞'][Math.floor(Math.random()*5)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 8 + 12) + 's';
-            heart.style.fontSize = (Math.random() * 1.5 + 2) + 'em';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 25000);
+        // Scroll to top
+        const scrollBtn = document.getElementById('scrollTopBtn');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-        setInterval(createHeart, 700);
-    </script>
-
-</body>
-</html>        <p class="text-block" style="margin-top: 40px; font-size: 1.45em; font-style: italic;">
-            Obrigado por existir, por ter cruzado meu caminho,<br>
-            por ser exatamente quem você é. <span class="heart">💕</span>
-        </p>
-        
-        <p class="text-block" style="margin-top: 45px; color: #e74c3c; font-weight: bold; font-size: 1.5em;">
-            Desde o dia 27... eu sou seu. ❤️
-        </p>
-    </div>
-
-    <script>
-        // Corações flutuantes
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('floating-heart');
-            heart.innerHTML = ['❤️','💖','💗','💓','💞'][Math.floor(Math.random()*5)];
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 8 + 12) + 's';
-            heart.style.fontSize = (Math.random() * 1.5 + 2) + 'em';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 25000);
-        }
-        setInterval(createHeart, 800);
     </script>
 
 </body>
